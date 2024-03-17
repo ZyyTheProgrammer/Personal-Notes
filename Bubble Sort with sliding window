@@ -1,0 +1,17 @@
+def bubble_sort(arr):
+    for _ in range(len(arr)):
+        for j in range(len(arr) - 2 + 1):
+            sub = arr[j:j+2]
+            print (f"{sub = }")
+            if sub[0] > sub[1]:       # this dictates if the sort will be increasing or decreasing
+                arr[j] = sub[0]
+            else:
+                if j != len(arr)-1:
+                    arr[j], arr[j+1] = sub[1], sub[0]
+                else:
+                    arr[j] = sub[1]
+            print (f"{arr = }")
+    
+    return arr
+    
+print(bubble_sort([3,4,2,1]))
