@@ -1,0 +1,12 @@
+def is_prime(num):
+    
+    # a prime number is an any number that is ONLY devisible by 1 and itself.
+    
+    if num <= 1:
+        return False
+    
+    for i in range(2, num):   #this will exclude the iteration of 1 and the value of num itself
+        if num % i == 0:
+            return False
+            
+    return True
