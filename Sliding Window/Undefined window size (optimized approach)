@@ -1,0 +1,16 @@
+# LeetCode Problem 2958. Length of Longest Subarray With at Most K Frequency
+
+class Solution:
+    def maxSubarrayLength(self, nums: List[int], k: int) -> int:
+        l = 0
+        counter = {}
+        res = 0
+
+        for r in range(len(nums)):
+            counter[nums[r]] = counter.get(nums[r], 0) + 1         # frequency
+
+            while counter[nums[r]] > k:                            # increment the left pointer everytime it satisfies the condition
+                counter[nums[l]] -= 1                             
+                l += 1
+            res = max(res, r-l+1)                                   # the left and right pointer will tell our window size
+        return res
