@@ -1,0 +1,11 @@
+# Leetcode problem 28. Find the Index of the First Occurrence in a String
+
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+
+        for i in range(len(haystack) - len(needle) + 1):                # len(arr) - len(window) - 1
+            window = haystack[i:i+len(needle)]                          # curent window: [i : i + len(window)]
+            if window == needle:
+                return i
+                
+        return -1
